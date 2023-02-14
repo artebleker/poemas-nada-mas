@@ -1,0 +1,19 @@
+.backoffice-container {
+  margin: 30px;
+}
+.backoffice-container div {
+  margin: 30px;
+}
+.login-div {
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  margin-top: 40px;
+}
+#login-form {
+  padding: 20px;
+  border-radius: 12px;
+  color: #000;
+  background-color: rgba(140, 130, 130, 0.5);
+  width: 50vw;
+}

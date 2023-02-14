@@ -1,0 +1,25 @@
+.publicaciones-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #590802, #87352f);
+}
+.publicaciones-container h2 {
+  font-size: 3rem;
+  padding-top: 35px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  text-shadow: 0.7px 0.7px 0.7px black;
+}
+.ol-publicaciones {
+    color: #fff;
+    list-style: disc;
+    margin: 0px 15px;
+}
+.ol-publicaciones li{
+    font-size: 1.2rem;
+    margin: 10px;
+}

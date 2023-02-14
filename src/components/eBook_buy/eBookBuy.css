@@ -1,0 +1,42 @@
+.img-ebook-buy {
+    width: 140px;
+    height: 200px;
+  }
+  
+  .buy-e-book-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+  }
+  
+  .buy-e-book-div {
+    margin: 50px 40px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template: auto/1fr 1fr;
+    gap: 100px;
+    flex-wrap: wrap;
+  }
+  .buy-e-book-div h4 {
+    font-size: 1.2rem;
+    margin: 4px;
+    text-align: center;
+  }
+  
+  .e-book-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .buy-e-book-div {
+      margin: 30px;
+      grid-template: 1fr / auto;
+      gap: 20px;
+    }
+  }

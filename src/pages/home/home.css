@@ -1,0 +1,179 @@
+.home-container {
+  text-align: center;
+}
+.home-container section {
+  margin: 30px 30px 40px;
+}
+.home-container img {
+  width: 80vw;
+  max-height: 85vh;
+  aspect-ratio: 3/2;
+}
+
+.titulo-home {
+  position: absolute;
+  margin: 30px;
+  right: 10%;
+  transform: translate(0%, 70%);
+  font-size: 5rem;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  cursor:default;
+}
+.primer-texto-home {
+  margin: 20px 80px;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+/* .carousel-control-next-icon,
+.carousel-control-prev-icon{
+  background-color: rgba(79, 66, 66, 0.541);
+} */
+.carousel-control-next{
+  right: 40px;
+}
+
+.carousel-control-prev{
+  left: 40px;
+}
+.carousel-container{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-indicators {
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.carousel-indicators button {
+  border: none;
+  background-color: white;
+  width: 30px;
+}
+.carousel-caption {
+  background: rgba(37, 25, 35, 0.624);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.carousel-caption h4 {
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  font-size: 2rem;
+}
+.carousel-caption p {
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  font-size: 1.8rem;
+}
+
+.carousel-img-home{
+  max-height: 90vh !important;
+}
+.bienvenidos-home-div h2 {
+  color: #fff;
+  margin: 20px 10vw;
+  text-shadow: 1px 2px 2px black;
+  font-size: 2.3rem;
+}
+@media screen and (min-width: 771px) {
+.bienvenidos-home-div {
+  position: absolute;
+  z-index: 1;
+  margin: 30px;
+  text-align: left;
+}
+}
+
+.presentacion-home  {
+  background-image: url("./../../img/presentacion.jpg");
+  background-size:cover;
+  background-position:bottom;
+  padding: 150px 0px;
+
+  text-align: right;
+}
+.presentacion-home div{
+  background: rgba(37, 25, 35, 0.624);
+  padding: 30px;
+  margin: 0px 50px;
+}
+.presentacion-home p {
+  color: #fff;
+  text-shadow: 1px 2px 2px black;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.presentacion-home a {
+  color: #fff;
+  background: rgba(37, 25, 35, 0.624);
+  padding: 5px;
+  border-radius: 5px;
+  text-shadow: 1px 2px 2px black;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 900px) {
+  .bienvenidos-home-div h2 {
+    margin: 20px 30px;
+    font-size: 1.7rem;
+  }
+  .carousel-caption p {
+    font-size: 1.5rem;
+  }
+  .carousel-caption h4 {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 771px) {
+  .titulo-home {
+    font-size: 10vw;
+    margin: 30px;
+    right: 10%;
+    transform: translate(0%, 40%);
+  }
+  .bienvenidos-home-div h2 {
+    margin: 20px 10px;
+    font-size: 1.6rem;
+    color: rgb(28, 26, 26);
+    text-shadow: none;
+  }
+  .carousel-caption p {
+    font-size: 1.1rem;
+  }
+  .carousel-caption h4 {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .primer-texto-home {
+    margin: 15px 25px;
+    font-size: 1rem;
+  }
+  .presentacion-home  {
+    padding: 0px;
+  }
+  .presentacion-home div {
+    padding: 20px;
+    margin: 0px 0px;
+  }
+  .presentacion-home p {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+   .presentacion-home a { 
+    font-size: 1.2rem;
+    font-weight: 400;
+  } 
+}
+@media screen and (max-width: 457px) {
+  .carousel-caption {
+    padding:2px;
+  }
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+  .carousel-caption h4 {
+    font-size: 1.2rem;
+  }
+}
