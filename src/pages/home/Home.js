@@ -10,16 +10,18 @@ import bienvenidos6 from "./../../img/bienvenidos6.png";
 import bienvenidos7 from "./../../img/bienvenidos7.png";
 import Carousel from "react-bootstrap/Carousel";
 import { BsInstagram } from "react-icons/bs";
+import logo from './../../img/logopngchico.png'
 import "./home.css";
+import { Link } from "react-router-dom";
 // import Instagram from "../../components/instagram/Instagram";
 const Home = () => {
- 
   return (
     <>
       <main className="home-container">
         {/* INICIO */}
         <section className="inicio-home">
           <div>
+            <img src={logo} alt="Poemas, nada más" className="logo-home"/>
             <h1 className="titulo-home">Poemas, nada más</h1>
             <img src={portada} alt="portada" />
           </div>
@@ -35,23 +37,27 @@ const Home = () => {
             "sugerido".
           </p>
         </section>
-        
+
         {/* PRESENTACION */}
         <section className="presentacion-home">
           <div>
-
-          <p>
-            Mi nombre es Cecy Tapia Prerafán. <br/>Soy Pianista Licenciada en Música
-            y Poeta.
-          </p>
-          <a href="https://www.instagram.com/cecy3493/?hl=es-la" target="_blank" rel="noreferrer">
-            Los invito a seguirme en mi instagram <BsInstagram/>
-          </a>
+            <p>
+              Mi nombre es Cecy Tapia Prerafán. <br />
+              Soy Pianista Licenciada en Música y Poeta.
+            </p>
+            <a
+              href="https://www.instagram.com/cecy3493/?hl=es-la"
+              target="_blank"
+              rel="noreferrer"
+              className="presentacion-home-link"
+            >
+              Los invito a seguirme en mi instagram <BsInstagram />
+            </a>
+            <br/>
+            <br/>
+            <Link to="/curriculum">Mi curriculum</Link>
           </div>
-          {/* <img src={presentacion} alt="presentacion" /> */}
-          {/* <Instagram/> */}
         </section>
-  
 
         {/* BIENVENIDOS */}
         <section className="bienvenidos-home">

@@ -1,9 +1,12 @@
 .publicaciones-container {
   height: 100vh;
+  background: linear-gradient(to bottom, #590802, #87352f);
+  padding-top: 40px;
+}
+.publicaciones-container div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to bottom, #590802, #87352f);
 }
 .publicaciones-container h2 {
   font-size: 3rem;
@@ -15,11 +18,40 @@
   text-shadow: 0.7px 0.7px 0.7px black;
 }
 .ol-publicaciones {
-    color: #fff;
-    list-style: disc;
-    margin: 0px 15px;
+  color: #fff;
+  list-style: disc;
+  margin: 0px 15px;
 }
-.ol-publicaciones li{
-    font-size: 1.2rem;
-    margin: 10px;
+.ol-publicaciones li {
+  font-size: 1.2rem;
+  margin: 10px;
+}
+.prox-publicaciones {
+  background: linear-gradient(to right, #59080215, #87352f, #59080215);
+  margin: 0px 150px;
+}
+.prox-publicaciones h2 {
+  font-size: 2.2rem;
+}
+.rosas-background{
+position: absolute;
+bottom: 5px;
+right: 5px;
+width: 400px;
+opacity: 65%;
+}
+
+.link-cv{
+  left: 12px;
+  position: fixed;
+}
+
+@media screen and (max-width: 680px) {
+  .rosas-background{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 275px;
+  opacity: 30%;
+  }
 }

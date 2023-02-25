@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { firestoreFetchSetting } from "./../../firebase/fireStoreFetch";
 import "./poemas.css";
 import { BiArrowBack } from "react-icons/bi";
-
+import logo from './../../img/logopng.png'
 const Poemas = () => {
   const [poemas, setPoemas] = useState([]);
 
@@ -39,14 +39,16 @@ const Poemas = () => {
         <div className="poemas-div">
           {poemas.map((poema) => {
             return (
-              <div key={poema.id} className={poema.estilo}>
+              <div key={poema.id} className="">
                 <h3>{poema.titulo}</h3>
                 <h6 className="pertenece-al-libro">{poema.libro}</h6>
                 <p
-                  className="texto-p"
+                  className={poema.estilo + " texto-p"}
                   dangerouslySetInnerHTML={{ __html: replaceWith(poema.texto) }}
                 />
                 <h6>{poema.año}</h6>
+                <br/>
+                <img src={logo} alt="" className="logo-separador"/>
               </div>
             );
           })}

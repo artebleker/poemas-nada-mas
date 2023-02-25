@@ -23,6 +23,14 @@
   grid-template: auto/1fr 1fr;
   gap: 120px;
 }
+.poemas-div div{
+  text-align: center;
+  padding: 15px;
+  box-shadow: 2px 2px 4px 0px rgba(119, 48, 48, 0.3);
+  border-radius: 5px;
+  /* border: solid black 1px; */
+
+}
 .texto-p{
     font-size: 1.3rem;
   }
@@ -30,6 +38,10 @@
   text-align: center;
   color: rgba(152, 152, 152, 0.912);
   font-size: 0.8rem;
+}
+.logo-separador{
+  width: 50px;
+  opacity: 50%;
 }
 @media screen and (max-width: 900px) {
   .poemas-div {

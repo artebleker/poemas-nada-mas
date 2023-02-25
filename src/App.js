@@ -10,6 +10,7 @@ import EBookFree from "./components/eBook_free/EBookFree";
 import "./app.css"
 import BackOffice from "./pages/backoffice/BackOffice";
 import Error from "./pages/error/Error";
+import Curriculum from "./pages/curriculum/Curriculum";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/descargar-e-books" element={<EBookFree/>} />
             <Route exact path="/comprar-e-books" element={<EBookBuy/>} />
             <Route exact path="/login" element={<BackOffice/>} />
+            <Route exact path="/curriculum" element={<Curriculum/>} />
             <Route exact path="*" element={<Error/>} />
           </Routes>
         </Layout>

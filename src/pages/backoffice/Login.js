@@ -42,9 +42,11 @@ const Login = ({ setGoBack }) => {
       
     >
       <Form onSubmit={(e) => handleSubmit(e)} id="login-form">
-        <Form.Group className="mb-3" controlId="formBasicTitle">
+        <Form.Group className="mb-3" controlId="formBasicText">
           <Form.Label>Usuario</Form.Label>
           <Form.Control type="text" ref={user} />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPass">
           <Form.Label>Contraseña</Form.Label>
           <Form.Control type="password" ref={pass} />
         </Form.Group>

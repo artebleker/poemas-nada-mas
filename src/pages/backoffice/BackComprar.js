@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
-import { collection, doc, setDoc } from "firebase/firestore";
+import React, { useRef , useState} from "react";
+import { collection, doc, setDoc , deleteDoc} from "firebase/firestore";
 import db from "./../../firebase/fireBaseConfig";
 import { Button, Form } from "react-bootstrap";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { firestoreFetchSetting } from "../../firebase/fireStoreFetch";
 const BackComprar = () => {
   const linkShop = useRef("");
   const nombreShop = useRef("");
@@ -13,7 +14,7 @@ const BackComprar = () => {
     const storage = getStorage();
     const storageRef = ref(storage, "/img-comprar/" + fileImagenShop.current.files[0].name);
     uploadBytes(storageRef, fileImagenShop.current.files[0]).then((snapshot) => {
-      console.log("Uploaded file!");
+      // console.log("Uploaded file!");
     });
   };
   const shopHandleSubmit = async (e) => {
@@ -30,8 +31,26 @@ const BackComprar = () => {
     document.getElementById("e-book-shop-form").reset();
     return newShop;
   };
+  const [listComprar, setListComprar] = useState([]);
+  const getDeleteSettings = async () => {
+    try {
+      const comprarData = await firestoreFetchSetting("/comprar/");
+      setListComprar(() => comprarData);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+const deleteId = useRef("")
 
+  const deletePoemHandleSubmit = async (e) => {
+    e.preventDefault();
+    await deleteDoc(doc(db, "comprar", deleteId.current.value));
+    alert("E-book para vender eliminado");
+    document.getElementById("delete-comprar").reset();
+    setListComprar([])
+  };
   return (
+    <div>
     <div>
       <h2>Agregar un E-Book para Vender</h2>
       <Form onSubmit={shopHandleSubmit} id="e-book-shop-form">
@@ -75,6 +94,34 @@ const BackComprar = () => {
           Guardar E-Book para vender
         </Button>
       </Form>
+    </div>
+    <div>
+        <h2>Eliminar un Poema</h2>
+        {listComprar.length < 1 ? (
+        <Button variant="info" onClick={() => getDeleteSettings()}>
+          Eliminar E-book para vender
+        </Button>
+        ) : (
+        <Form onSubmit={deletePoemHandleSubmit} id="delete-comprar">
+          <Form.Group className="mb-3" controlId="formDeleteComprar">
+            <Form.Label>Elija el e-book a eliminar</Form.Label>
+            <Form.Select aria-label="Texto a eliminar" ref={deleteId}>
+              {listComprar.map((m) => {
+                return (
+                  <option value={m.id} key={m.id}>
+                    {m.nombre}
+                  </option>
+                );
+              })}
+            </Form.Select>
+          </Form.Group>
+          <Button variant="danger" type="submit">
+            Eliminar
+          </Button>
+        </Form>
+        )
+        }
+      </div>
     </div>
   );
 };
