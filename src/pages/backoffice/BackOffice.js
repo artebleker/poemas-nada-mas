@@ -6,7 +6,7 @@ import BackComprar from "./BackComprar";
 import BackVideos from "./BackVideos";
 import "./backOffice.css";
 import Login from "./Login";
-import { Button } from "react-bootstrap";
+import { Button, ButtonGroup } from "react-bootstrap";
 
 const BackOffice = () => {
   const [goBack, setGoBack] = useState(false);
@@ -28,6 +28,7 @@ const BackOffice = () => {
     <>
       {goBack ? (
         <div className="backoffice-container">
+        <ButtonGroup aria-label="Categorias">
           <Button variant="primary" onClick={() => setCategory("Poemas")}>
             Poemas
           </Button>
@@ -43,6 +44,7 @@ const BackOffice = () => {
           <Button variant="primary" onClick={() => setCategory("Publicaciones")}>
             Publicaciones
           </Button>
+          </ButtonGroup>
           {backOfficeArray.filter((f)=>f.query === category).map(m =>{
             return <div key={m.query}>{m.back}</div>
           })}
