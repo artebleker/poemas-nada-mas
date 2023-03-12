@@ -20,10 +20,9 @@ const Home = () => {
       <main className="home-container">
         {/* INICIO */}
         <section className="inicio-home">
-          <div>
+            <div className="logo-titulo-container">
+            <h1 className="titulo-home">Poemas,<br/> nada más</h1>
             <img src={logo} alt="Poemas, nada más" className="logo-home"/>
-            <h1 className="titulo-home">Poemas, nada más</h1>
-            <img src={portada} alt="portada" />
           </div>
           <p className="primer-texto-home">
             La poesía ofrece lugares de paz; si hay conflicto, los escarba y,
@@ -51,7 +50,7 @@ const Home = () => {
               rel="noreferrer"
               className="presentacion-home-link"
             >
-              Los invito a seguirme en mi instagram <BsInstagram />
+              Siganme en mi instagram <BsInstagram />
             </a>
             <br/>
             <br/>

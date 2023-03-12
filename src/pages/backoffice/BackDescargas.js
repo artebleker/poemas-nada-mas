@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { collection, doc, setDoc, deleteDoc } from "firebase/firestore";
 import db from "./../../firebase/fireBaseConfig";
-import { Button, Form } from "react-bootstrap";
+import { Button, ButtonGroup, Form } from "react-bootstrap";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import { firestoreFetchSetting } from "../../firebase/fireStoreFetch";
 
@@ -46,17 +46,22 @@ const BackDescargas = () => {
     upLoadFile();
     alert("E-book para descargar guardado");
     document.getElementById("e-book-Download-form").reset();
+    setEdit(() => "");
     return newDownload;
   };
+    // traer data
   const [listDescargas, setListDescargas] = useState([]);
-  const getDeleteSettings = async () => {
-    try {
+  const [edit, setEdit] = useState("");
+  const getEditSettings = async (value) => {
       const descargasData = await firestoreFetchSetting("/descargas/");
       setListDescargas(() => descargasData);
-    } catch (err) {
-      console.error(err);
-    }
+      setEdit(value)
   };
+
+  
+   
+
+  // Borrar
   const deleteId = useRef("");
 
   const deleteDescargaHandleSubmit = async (e) => {
@@ -64,11 +69,36 @@ const BackDescargas = () => {
     await deleteDoc(doc(db, "descargas", deleteId.current.value));
     alert("E-book eliminado");
     document.getElementById("delete-descarga").reset();
+    setEdit(() => "");
     setListDescargas([]);
   };
 
   return (
     <div>
+       {edit === "" && (
+        <ButtonGroup>
+          <Button
+            variant="primary"
+            onClick={(e) => {
+              e.preventDefault();
+              setEdit("agregar");
+            }}
+          >
+            <h2>Agregar un E-book</h2>
+          </Button>
+          
+          <Button
+            variant="danger"
+            onClick={(e) => {
+              e.preventDefault();
+              getEditSettings("eliminar");
+            }}
+          >
+            <h2>Eliminar un E-book</h2>
+          </Button>
+        </ButtonGroup>
+      )}
+      {edit === "agregar" && (
       <div>
         <h2>Agregar un E-Book para Descargar</h2>
         <Form onSubmit={DownloadHandleSubmit} id="e-book-Download-form">
@@ -117,15 +147,22 @@ const BackDescargas = () => {
           <Button variant="primary" type="submit">
             Guardar E-Book para descargar
           </Button>
+          <Button
+              variant="warning"
+              onClick={() => {
+                setEdit(() => "");
+              }}
+            >
+              Cancelar
+            </Button>
         </Form>
       </div>
+      )}
+    
+      {edit === "eliminar" && (
       <div>
         <h2>Eliminar E-Book para descargar</h2>
-        {listDescargas.length < 1 ? (
-          <Button variant="info" onClick={() => getDeleteSettings()}>
-            Eliminar e-book
-          </Button>
-        ) : (
+        
           <Form onSubmit={deleteDescargaHandleSubmit} id="delete-descarga">
             <Form.Group className="mb-3" controlId="formDeleteDescarga">
               <Form.Label>Elija el e-book a eliminar</Form.Label>
@@ -142,9 +179,17 @@ const BackDescargas = () => {
             <Button variant="danger" type="submit">
               Eliminar
             </Button>
+            <Button
+              variant="warning"
+              onClick={() => {
+                setEdit(() => "");
+              }}
+            >
+              Cancelar
+            </Button>
           </Form>
-        )}
       </div>
+        )}
     </div>
   );
 };

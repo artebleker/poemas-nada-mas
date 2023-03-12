@@ -1,7 +1,7 @@
 import React, { useRef , useState} from "react";
 import { collection, doc, setDoc , deleteDoc} from "firebase/firestore";
 import db from "./../../firebase/fireBaseConfig";
-import { Button, Form } from "react-bootstrap";
+import { Button, ButtonGroup, Form } from "react-bootstrap";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import { firestoreFetchSetting } from "../../firebase/fireStoreFetch";
 const BackComprar = () => {
@@ -29,16 +29,16 @@ const BackComprar = () => {
     upLoadFile();
     alert("E-book para vender guardado");
     document.getElementById("e-book-shop-form").reset();
+    setEdit(() => "");
     return newShop;
   };
   const [listComprar, setListComprar] = useState([]);
-  const getDeleteSettings = async () => {
-    try {
+  const [edit, setEdit] = useState("");
+  const getEditSettings = async (value) => {
+
       const comprarData = await firestoreFetchSetting("/comprar/");
       setListComprar(() => comprarData);
-    } catch (err) {
-      console.error(err);
-    }
+      setEdit(value)
   };
 const deleteId = useRef("")
 
@@ -47,10 +47,35 @@ const deleteId = useRef("")
     await deleteDoc(doc(db, "comprar", deleteId.current.value));
     alert("E-book para vender eliminado");
     document.getElementById("delete-comprar").reset();
+    setEdit(() => "");
     setListComprar([])
   };
   return (
     <div>
+       {edit === "" && (
+        <ButtonGroup>
+          <Button
+            variant="primary"
+            onClick={(e) => {
+              e.preventDefault();
+              setEdit("agregar");
+            }}
+          >
+            <h2>Agregar un E-book</h2>
+          </Button>
+          
+          <Button
+            variant="danger"
+            onClick={(e) => {
+              e.preventDefault();
+              getEditSettings("eliminar");
+            }}
+          >
+            <h2>Eliminar un E-book</h2>
+          </Button>
+        </ButtonGroup>
+      )}
+      {edit === "agregar" && (
     <div>
       <h2>Agregar un E-Book para Vender</h2>
       <Form onSubmit={shopHandleSubmit} id="e-book-shop-form">
@@ -93,15 +118,20 @@ const deleteId = useRef("")
         <Button variant="primary" type="submit">
           Guardar E-Book para vender
         </Button>
+        <Button
+              variant="warning"
+              onClick={() => {
+                setEdit(() => "");
+              }}
+            >
+              Cancelar
+            </Button>
       </Form>
-    </div>
+    </div> )}
+    {edit === "eliminar" && (
     <div>
         <h2>Eliminar un Poema</h2>
-        {listComprar.length < 1 ? (
-        <Button variant="info" onClick={() => getDeleteSettings()}>
-          Eliminar E-book para vender
-        </Button>
-        ) : (
+        
         <Form onSubmit={deletePoemHandleSubmit} id="delete-comprar">
           <Form.Group className="mb-3" controlId="formDeleteComprar">
             <Form.Label>Elija el e-book a eliminar</Form.Label>
@@ -118,10 +148,18 @@ const deleteId = useRef("")
           <Button variant="danger" type="submit">
             Eliminar
           </Button>
+          <Button
+              variant="warning"
+              onClick={() => {
+                setEdit(() => "");
+              }}
+            >
+              Cancelar
+            </Button>
         </Form>
+      </div>
         )
         }
-      </div>
     </div>
   );
 };

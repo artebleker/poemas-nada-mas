@@ -9,37 +9,72 @@
   max-height: 85vh;
   aspect-ratio: 3/2;
 }
-.logo-home{
-position: absolute;
-width: 300px !important;
-height: 300px !important;
-margin: 30px;
-left: 10%;
-transform: translate(5%, 25%);
-background-color: white;
-border-radius: 420px;
-padding: 15px;
-box-shadow: 0px 0px 5px 0px rgba(157, 98, 98, 0.874);
+
+.logo-titulo-container {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.4)
+    ),
+    url("./../../img/portada.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.logo-home {
+  width: 250px !important;
+  height: 250px !important;
+  margin: 30px;
+  background-color: white;
+  border-radius: 420px;
+  padding: 15px;
+  box-shadow: 0px 0px 10px 5px rgba(157, 98, 98, 0.874);
 }
 .titulo-home {
-  position: absolute;
   margin: 30px;
-  right: 10%;
-  transform: translate(0%, 70%);
-  font-size: 5rem;
+  font-size: 8rem;
   color: white;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 5px 15px black;
   cursor: default;
 }
+
+@media screen and (max-width: 800px) {
+  .logo-titulo-container {
+    height: 40vh;
+  }
+  .logo-home {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 20px;
+  }
+  .titulo-home {
+    margin: 20px;
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .logo-titulo-container {
+     flex-direction: column;
+  }
+  .logo-home {
+    width: 100px !important;
+    height: 100px !important;
+    margin: 10px;
+  }
+  }
+
 .primer-texto-home {
   margin: 20px 80px;
   font-style: italic;
   font-size: 1.5rem;
+  font-weight: 400;
+  color: rgb(31, 29, 29);
 }
-/* .carousel-control-next-icon,
-.carousel-control-prev-icon{
-  background-color: rgba(79, 66, 66, 0.541);
-} */
+
 .carousel-control-next {
   right: 40px;
 }
@@ -136,12 +171,7 @@ box-shadow: 0px 0px 5px 0px rgba(157, 98, 98, 0.874);
   }
 }
 @media screen and (max-width: 771px) {
-  .titulo-home {
-    font-size: 10vw;
-    margin: 30px;
-    right: 10%;
-    transform: translate(0%, 40%);
-  }
+  
   .bienvenidos-home-div h2 {
     margin: 20px 10px;
     font-size: 1.6rem;

@@ -3,6 +3,9 @@
   text-align: center;
   height: 100vh;
   padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+
 }
 .categorias-article h2 {
   font-size: 3rem;
@@ -23,17 +26,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 20px; 
+}
+.categorias-container section a:hover{
+text-decoration: none;
+color: #fff;
 }
 .categorias-img {
   width: 280px;
   height: 200px;
   margin: 5px;
+  border-radius: 5px;
+  box-shadow:0px 0px 10px 5px rgba(157, 98, 98, 0.386);
 }
 
-.volver-link{
-  /* padding: 20px; */
-}
 .volver-button{
   border-radius: 0px 0px 12px 0px;
 }
