@@ -6,15 +6,18 @@
   margin: 30px;
 }
 .login-div {
-  width: 100vw;
-  display: grid;
-  place-content: center;
+  /* width: 100vw; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
   margin-top: 40px;
+  height: 70dvh;
 }
 #login-form {
   padding: 20px;
   border-radius: 12px;
   color: #000;
   background-color: rgba(140, 130, 130, 0.5);
-  width: 50vw;
+  /* width: 50vw; */
+  height: max-content;
 }

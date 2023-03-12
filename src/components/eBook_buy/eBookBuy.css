@@ -33,6 +33,10 @@
     justify-content: center;
   }
   
+  .btn-buy:hover{
+    text-decoration: none;
+    color:black;
+  }
   @media screen and (max-width: 900px) {
     .buy-e-book-div {
       margin: 30px;

@@ -1,15 +1,18 @@
-import React from 'react'
-// import { Container } from 'react-bootstrap';
-// import Navbar from 'react-bootstrap/Navbar';
-
+import React from "react";
+import { Nav, Navbar } from "react-bootstrap";
 const Footer = () => {
   return (
-    <>
-    {/* <Navbar bg="secondary" expand="lg" >
-        <Container></Container>
-    </Navbar>   */}
-    </>
-    )
-}
+    // <div className="footer">
+      <Navbar bg="secondary" className=' footer' sticky="bottom">
+      <Nav className="me-auto">
+        <Nav.Link href="/categorias">Categorias</Nav.Link>
+        <Nav.Link href="/videos">Videos</Nav.Link>
+        <Nav.Link href="/publicaciones">Publicaciones</Nav.Link>
+        <Nav.Link href="/login">Ingresar</Nav.Link>
+      </Nav>
+      </Navbar>
+    // </div>
+  );
+};
 
-export default Footer
+export default Footer;

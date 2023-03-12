@@ -16,6 +16,13 @@ border-radius: 120px;
 padding: 2px;
 box-shadow: 0px 0px 5px 0px rgba(157, 98, 98, 0.874);
 }
+.footer a{
+font-size: small;
+color: white !important;
+font-weight: 600;
+text-shadow: 1px 1px 1px rgba(29, 28, 28, 0.8);
+}
+
 @media screen and (max-width:991px ) {
   .header-container {
     justify-content:space-between ;
