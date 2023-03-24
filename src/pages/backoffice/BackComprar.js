@@ -84,7 +84,7 @@ const deleteId = useRef("")
           <Form.Control type="text" ref={nombreShop} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicShopLink">
-          <Form.Label>Link a mercado libre</Form.Label>
+          <Form.Label>Link de compra</Form.Label>
           <Form.Control type="text" ref={linkShop} />
         </Form.Group>
         <Form.Group

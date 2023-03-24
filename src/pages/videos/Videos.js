@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Button } from "react-bootstrap";
 import { firestoreFetchSetting } from "../../firebase/fireStoreFetch";
 import "./videos.css";
 const Videos = () => {
@@ -20,6 +21,9 @@ const Videos = () => {
   return (
     <article className="videos-article">
       <h2>Videos</h2>
+        <a href="https://www.youtube.com/@poemasnadamas" className="" target="_blank" rel="noreferrer">
+          <Button variant="danger">YouTube</Button>
+          </a>
       <div className="videos-container">
         {videos.map((video) => {
           return (

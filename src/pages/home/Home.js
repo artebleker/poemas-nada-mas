@@ -1,5 +1,5 @@
 import React from "react";
-import portada from "./../../img/portada.jpg";
+// import portada from "./../../img/portada.jpg";
 // import presentacion from "./../../img/presentacion.jpg";
 import bienvenidos from "./../../img/bienvenidos.jpg";
 import bienvenidos2 from "./../../img/bienvenidos2.png";
