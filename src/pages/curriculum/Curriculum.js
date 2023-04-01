@@ -8,17 +8,17 @@ const Curriculum = () => {
         <h2 >DATOS CURRICULARES</h2>
         <p >Nacida en la Ciudad de Salta, República Argentina.&nbsp;</p>
         <p >Pianista Licenciada en Música.</p>
-        <p >Poeta amateur.&nbsp;</p>
-        <p >ESTUDIOS</p>
+        <p >Poeta amateur.;</p>
+        <h6 >ESTUDIOS</h6>
         <p >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; - Profesora Superior de Piano</p>
         <p >Conservatorio Nacional “CARLOS LOPEZ BUCHARDO”</p>
         <p >&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; - Profesora Universitaria de Música</p>
         <p >Instituto Universitario Nacional de Arte</p>
-        <p >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+       <br/>
         <p >-Licenciada en Artes Musicales</p>
         <p >&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Universidad Nacional del Arte.</p>
         <p >Fueron sus maestras de piano las Maestras Prof. Marina ARROZ, Salta; Prof. Zenaide LISI DE CRIVELLI, Salta; Prof. Delia SACERDOTE DE BERETERVIDE, Buenos Aires y Prof. Graciela BERETERVIDE, Buenos Aires.</p>
-        <p >OTRAS ACTIVIDADES:</p>
+        <h6 >OTRAS ACTIVIDADES:</h6>
         <p >Realizó talleres de poesía, narrativa y oratoria.</p>
         <p >Estudió latín, griego y portugués; actualmente toma clases de japonés.</p>
         <p >Tomó clases de oratoria y declamación con la Maestra María Angélica VILCHES.</p>
@@ -27,7 +27,7 @@ const Curriculum = () => {
         <p >Participa de varias antologías tanto a nivel nacional como Internacional tanto en poesía libre como en poesía haiku.</p>
         <p >Obtuvo diferentes premios en concursos literarios tanto en Argentina como en España.</p>
         <p >Paralelamente incursionó en las artes marciales de Japón, con un recorrido de 37 años en la vía marcial, con Sensee Luis Alberto FALCONE, de Shugendo Ryû Nippon.&nbsp;</p>
-        <p >LIBROS PUBLICADOS:&nbsp;</p>
+        <h6>LIBROS PUBLICADOS:</h6>
         <p >-“Poemas e Imágenes. Copahue”, Editora Lyra, Bs. As., 2004.</p>
         <p >- “Poemas Crepusculares” Ediciones Raíz Alternativa, Bs. As., 2006</p>
         <p >- “Haiku I” , Editorial Dunken, Bs. As., &nbsp;2006.</p>
@@ -42,8 +42,8 @@ const Curriculum = () => {
         <p >- “A Alfonsina – Poemas de Fuego y Mar”, edición virtual, Ciudad Autónoma de Bs. As., 2022.</p>
         <p >- “Poemas del Dejarme Ir”, edición virtual, Ciudad Autónoma de Bs. As., &nbsp;2022.</p>
         <p >- “Poemas Cortos de Instantes Largos”, edición virtual, Ciudad Autónoma de &nbsp;Bs. &nbsp; As., 2022.</p>
-        <p >POESÍA LIBRE</p>
-        <p >4.1: &nbsp;INTERVIENE EN LAS SIGUIENTES ANTOLOGÍAS DE POESÍA LIBRE</p>
+        <h6 >POESÍA LIBRE</h6>
+        <p >INTERVIENE EN LAS SIGUIENTES ANTOLOGÍAS DE POESÍA LIBRE</p>
         <p >“Autores Secretos”. Editorial Clatvesa, Bs. As., 2004.</p>
         <p >“La Gran Apuesta” compilado por Fernando Sánchez Zinny, Editorial Dunken, Bs. As., &nbsp;2005.</p>
         <p >XXV Antología Literaria “Argentina en Versos y Prosas”, Ediciones Raíz Alternativa, Bs. As., 2005.&nbsp;</p>
@@ -62,7 +62,7 @@ const Curriculum = () => {
         <p >Bs. As., 2020.</p>
         <p >“Antología del Taller de Escritura Creativa”, coordinado por Prof. Rolando Paciente, &nbsp;Editorial Tahiel, Bs. As., 2020.</p>
         <p >“Antología del Taller de Escritura Creativa”, coordinado por Prof. Rolando Paciente, Editorial Tahiel, Bs. As., 2021.</p>
-        <p >4.2 : PREMIOS Y MENCIONES EN POESÍA LIBRE</p>
+        <p >PREMIOS Y MENCIONES EN POESÍA LIBRE</p>
         <p >2do premio- &nbsp;Concurso “Autores Secretos”, Editorial Clatvesa, Bs. As., &nbsp;2004</p>
         <p >Medalla y mención especial. Concurso Nacional de Poesía Latinoamericana “Voces”- &nbsp;2005.</p>
         <p >Mención y Medalla- Ediciones Raíz Alternativa- XXV Antología Literaria “Argentina en Versos y Prosas” Julio, Bs. As., 2005.</p>
@@ -90,8 +90,8 @@ const Curriculum = () => {
         <p >2do premio. Fundación Huellas Caribeñas, Samarlee Revista Literaria, Colombia, 2016.</p>
         <p >Finalista. Concurso “Poesía Desplegada”, compilado y corregido por Marita Rodríguez Cazaux, Editorial Dunken. 2019.</p>
         <p >Finalista Concurso Editorial Dunken. Integra Antología “Rimas Personales”, compilado por Mercedes Baigorri. Marzo de 2020.</p>
-        <p >5. &nbsp;POESIA HAIKU</p>
-        <p >5.1: INTERVIENE EN LAS SIGUIENTES ANTOLOGÍAS DE POESÍA HAIKU</p>
+        <h6 >POESIA HAIKU</h6>
+        <p >INTERVIENE EN LAS SIGUIENTES ANTOLOGÍAS DE POESÍA HAIKU</p>
         <p >“Un viejo Estanque”, antología de haiku contemporáneo en España, Granada, Editorial Comares, 2013.</p>
         <p >“Haikus VI”, integra esta antología como finalista del I Certamen de Haiku “Mario Benedetti”, Letras como Espada, Toledo, España, 2016.</p>
         <p >“Haikus VIII”, integra esta antología como finalista del I Certamen de Haiku “Jorge Luis Borges”, Letras como Espada, Toledo, España, 2016.</p>

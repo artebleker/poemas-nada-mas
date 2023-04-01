@@ -9,8 +9,8 @@ import bienvenidos5 from "./../../img/bienvenidos5.png";
 import bienvenidos6 from "./../../img/bienvenidos6.png";
 import bienvenidos7 from "./../../img/bienvenidos7.png";
 import Carousel from "react-bootstrap/Carousel";
-import { BsInstagram } from "react-icons/bs";
-import logo from './../../img/logopngchico.png'
+import { BsInstagram, BsFacebook, BsYoutube } from "react-icons/bs";
+import logo from "./../../img/logopngchico.png";
 import "./home.css";
 import { Link } from "react-router-dom";
 // import Instagram from "../../components/instagram/Instagram";
@@ -20,9 +20,12 @@ const Home = () => {
       <main className="home-container">
         {/* INICIO */}
         <section className="inicio-home">
-            <div className="logo-titulo-container">
-            <h1 className="titulo-home">Poemas,<br/> nada más</h1>
-            <img src={logo} alt="Poemas, nada más" className="logo-home"/>
+          <div className="logo-titulo-container">
+            <h1 className="titulo-home">
+              Poemas,
+              <br /> nada más
+            </h1>
+            <img src={logo} alt="Poemas, nada más" className="logo-home " />
           </div>
           <p className="primer-texto-home">
             La poesía ofrece lugares de paz; si hay conflicto, los escarba y,
@@ -38,34 +41,54 @@ const Home = () => {
         </section>
 
         {/* PRESENTACION */}
-        <section className="presentacion-home">
-          <div>
+        <section className="presentacion-home ">
+          <div className="presentacion-home_div ">
             <p>
-              Mi nombre es Cecy Tapia Prerafán. <br />
-              Soy Pianista Licenciada en Música y Poeta.
+              Mi nombre es Cecy Tapia <br />
+              Soy Pianista Licenciada en Música y Poeta
             </p>
-            <a
-              href="https://www.instagram.com/cecy3493/?hl=es-la"
-              target="_blank"
-              rel="noreferrer"
-              className="presentacion-home-link"
-            >
-              Siganme en mi instagram <BsInstagram />
-            </a>
-            <br/>
-            <br/>
-            <Link to="/curriculum">Mi curriculum</Link>
+            <div className="div-saber-mas">
+              <div>
+                <a
+                  href="https://www.instagram.com/cecy3493/?hl=es-la"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="presentacion-home-link m-1"
+                >
+                  <BsInstagram />
+                </a>
+                <a
+                  href="https://www.facebook.com/ceciliadelvalle.tapia"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="presentacion-home-link m-1"
+                >
+                  <BsFacebook />
+                </a>
+                <a
+                  href="https://www.youtube.com/@poemasnadamas"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="presentacion-home-link m-1"
+                >
+                  <BsYoutube />
+                </a>
+              </div>
+              {/* <br/>
+            <br/> */}
+              <Link to="/curriculum">Saber más</Link>
+            </div>
           </div>
         </section>
 
         {/* BIENVENIDOS */}
         <section className="bienvenidos-home">
-          <div className="bienvenidos-home-div">
-            <h2>
+          <div className="bienvenidos-home-div ">
+            <h2 className="text-start">
               Bienvenidos a este espacio donde compartiremos una de las más
               excelsas artes:
             </h2>
-            <h2>Poemas, nada más.</h2>
+            <h2 className="text-center">Poemas, nada más.</h2>
           </div>
           <Carousel
             slide={false}
@@ -81,11 +104,13 @@ const Home = () => {
                 alt="Federico Garía Lorca"
               />
               <Carousel.Caption className="carousel-caption" interval={1500}>
-                <h4>Federico Garía Lorca</h4>
+                {/* <h4>Federico Garía Lorca</h4> */}
                 <p>
-                  «Poesía es la unión de dos palabras que uno nunca supuso que
+                  “Para quien busca, la poesía es el tren que nos lleva a donde
+                  queremos regresar”.
+                  {/* «Poesía es la unión de dos palabras que uno nunca supuso que
                   pudieran juntarse, y que forman algo algo así como un
-                  misterio»
+                  misterio» */}
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -97,10 +122,12 @@ const Home = () => {
               />
 
               <Carousel.Caption className="carousel-caption" interval={1500}>
-                <h4>Jorge Luis Borges</h4>
+                {/* <h4>Jorge Luis Borges</h4> */}
                 <p>
-                  «poesía es la expresión de la belleza por medio de palabras
-                  artísticamente entretejidas»
+                  “Poetizar es insistir en ponerle nombre al misterio, sin
+                  lograrlo”.
+                  {/* «poesía es la expresión de la belleza por medio de palabras
+                  artísticamente entretejidas» */}
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -111,11 +138,13 @@ const Home = () => {
                 alt="Octavio Paz"
               />
               <Carousel.Caption className="carousel-caption" interval={1500}>
-                <h4>Octavio Paz</h4>
+                {/* <h4>Octavio Paz</h4> */}
                 <p>
-                  «La poesía es la memoria de los pueblos, y la parte secreta
+                  “Poesía es el brindis del gran encuentro que perdura mucho más
+                  allá de las palabras”.
+                  {/* «La poesía es la memoria de los pueblos, y la parte secreta
                   del alma de cada uno. Este es un gráfico con un pie de foto de
-                  muestra.»
+                  muestra.» */}
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -126,10 +155,12 @@ const Home = () => {
                 alt="Oliverio Girondo"
               />
               <Carousel.Caption className="carousel-caption" interval={1500}>
-                <h4>Oliverio Girondo</h4>
+                {/* <h4>Oliverio Girondo</h4> */}
                 <p>
-                  «La poesía siempre es lo otro, aquello que todos ignoran hasta
-                  que lo descubre un verdadero poeta.»
+                  “Un poema es el oasis prometido y alcanzado que no logra
+                  aplacar la sed”.
+                  {/* «La poesía siempre es lo otro, aquello que todos ignoran hasta
+                  que lo descubre un verdadero poeta.» */}
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -140,8 +171,12 @@ const Home = () => {
                 alt="Vicente Huidobro"
               />
               <Carousel.Caption className="carousel-caption" interval={1500}>
-                <h4>Vicente Huidobro</h4>
-                <p>«La poesía es un atentado celeste»</p>
+                {/* <h4>Vicente Huidobro</h4> */}
+                <p>
+                  “Los versos nos llenan de mundos que parecían imposibles hasta
+                  que, sin darnos cuenta, empiezan a hacerse realidad”.
+                  {/* «La poesía es un atentado celeste» */}
+                </p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -151,10 +186,12 @@ const Home = () => {
                 alt="César Vallejo"
               />
               <Carousel.Caption className="carousel-caption" interval={1500}>
-                <h4>César Vallejo</h4>
+                {/* <h4>César Vallejo</h4> */}
                 <p>
-                  «la poesía es un grito de justicia social y una manera de
-                  intentar poner orden en el mundo.»
+                  “El lado útil de la escritura es traducirnos a nosotros
+                  mismos”
+                  {/* «la poesía es un grito de justicia social y una manera de
+                  intentar poner orden en el mundo.» */}
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -165,10 +202,13 @@ const Home = () => {
                 alt="Cecy Tapia"
               />
               <Carousel.Caption className="carousel-caption" interval={1500}>
-                <h4>Cecy Tapia</h4>
+                {/* <h4>Cecy Tapia</h4> */}
                 <p>
-                  «La metáfora poética es el lenguaje del inconsciente, desde
-                  allí que la poesía trascienda la razón.»
+                  “La metáfora poética es el lenguaje del inconsciente, desde
+                  allí que trascienda la razón. Es allí donde todos nos
+                  encontramos alrededor del fuego”.
+                  {/* «La metáfora poética es el lenguaje del inconsciente, desde
+                  allí que la poesía trascienda la razón.» */}
                 </p>
               </Carousel.Caption>
             </Carousel.Item>

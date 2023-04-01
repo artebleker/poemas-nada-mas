@@ -1,5 +1,5 @@
 .publicaciones-container {
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(to bottom, #590802, #87352f);
   padding-top: 40px;
 }

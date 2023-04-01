@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { firestoreFetchSetting } from "../../firebase/fireStoreFetch";
+import  {BsYoutube } from "react-icons/bs";
 import "./videos.css";
 const Videos = () => {
   const [videos, setVideos] = useState([]);
@@ -22,7 +23,7 @@ const Videos = () => {
     <article className="videos-article">
       <h2>Videos</h2>
         <a href="https://www.youtube.com/@poemasnadamas" className="" target="_blank" rel="noreferrer">
-          <Button variant="danger">YouTube</Button>
+          <Button variant="danger" ><BsYoutube/> YouTube</Button>
           </a>
       <div className="videos-container">
         {videos.map((video) => {

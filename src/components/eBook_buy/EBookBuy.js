@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { BsBook } from "react-icons/bs";
 import { firestoreFetchSetting } from "../../firebase/fireStoreFetch";
 import { Button } from "react-bootstrap";
 import { BiArrowBack } from "react-icons/bi";
 import "./eBookBuy.css"
-import { hover } from "@testing-library/user-event/dist/hover";
 const EBookBuy = () => {
 
   const [titleList, setTitleList] = useState([]);
@@ -55,7 +54,7 @@ const EBookBuy = () => {
                   }}
                 />
                 <Button variant='danger'>
-                  <a className="btn-buy" href={m.link} target="_blank" alt={m.nombre} rel="noreferrer">Comprar</a>
+                  <a className="btn-buy" href={m.link} target="_blank" alt={m.nombre} rel="noreferrer"><h4><BsBook/> Comprar</h4></a>
                 </Button>
               </div>
             );
