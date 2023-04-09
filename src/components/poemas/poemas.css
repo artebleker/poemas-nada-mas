@@ -1,3 +1,7 @@
+.img-poema-pdf{
+max-width: 80vw;
+}
+
 .haiku {
   text-align: center;
 }
@@ -10,7 +14,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 50px;
+    /* margin: 50px; */
 }
 .poemas-section h2{
     font-size: 3rem;
@@ -21,14 +25,14 @@
   justify-content: center;
   align-items: center;
   grid-template: auto/1fr 1fr;
-  gap: 120px;
+  /* gap: 120px; */
 }
 .poemas-div div{
   text-align: center;
   padding: 15px;
-  box-shadow: 2px 2px 4px 0px rgba(119, 48, 48, 0.3);
-  border-radius: 5px;
-  /* border: solid black 1px; */
+  /* box-shadow: 2px 2px 4px 0px rgba(119, 48, 48, 0.3); */
+  /* border-radius: 5px; */
+  border: solid black 1px;
 
 }
 .texto-p{
@@ -45,9 +49,9 @@
 }
 @media screen and (max-width: 900px) {
   .poemas-div {
-    margin: 30px;
+    /* margin: 30px; */
     grid-template: 1fr / auto;
-    gap: 20px;
+    /* gap: 20px; */
   }
   .texto-p{
     font-size: 1rem;
