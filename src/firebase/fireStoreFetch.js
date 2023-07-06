@@ -1,21 +1,15 @@
-import { collection, getDocs, query, where} from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import db from "./fireBaseConfig";
 
 export const firestoreFetchSetting = async (URL) => {
-    let q = query(
-      collection(db, URL)
-    );
-    const querySnapshot = await getDocs(q);
-    const dataFromFirestore = querySnapshot.docs.map((document) => ({
-      id: document.id,
-      ...document.data(),
-    }));
-    return dataFromFirestore;
-  };
-
-
-
-
+  let q = query(collection(db, URL));
+  const querySnapshot = await getDocs(q);
+  const dataFromFirestore = querySnapshot.docs.map((document) => ({
+    id: document.id,
+    ...document.data(),
+  }));
+  return dataFromFirestore;
+};
 
 // import {
 //     query,
@@ -37,7 +31,7 @@ export const firestoreFetchSetting = async (URL) => {
 //     else if (resolve && testOrId === 0)
 //       q = query(collection(db, "data"), where("categoryId", "==", resolve));
 //     else q = query(collection(db, "data"), orderBy("type"));
-  
+
 //     const querySnapshot = await getDocs(q);
 //     const dataFromFirestore = querySnapshot.docs.map((document) => ({
 //       id: document.id,
@@ -49,7 +43,7 @@ export const firestoreFetchSetting = async (URL) => {
 //   export const firestoreFetchOne = async (idItem) => {
 //     const docRef = doc(db, "data", idItem);
 //     const docSnap = await getDoc(docRef);
-  
+
 //     if (docSnap.exists()) {
 //       return {
 //         id: idItem,
@@ -59,4 +53,3 @@ export const firestoreFetchSetting = async (URL) => {
 //       console.log("404 No Found");
 //     }
 //   };
-  

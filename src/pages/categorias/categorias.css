@@ -1,7 +1,7 @@
 .categorias-article {
   background: #cccdda;
   text-align: center;
-  height: 100vh;
+  height:calc(100vh - 115.3px);
   padding-top: 30px;
   display: flex;
   flex-direction: column;

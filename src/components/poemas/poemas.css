@@ -1,5 +1,5 @@
-.img-poema-pdf{
-max-width: 80vw;
+.img-poema-pdf {
+  max-width: 80vw;
 }
 
 .haiku {
@@ -9,15 +9,15 @@ max-width: 80vw;
 .poema {
   text-align: left;
 }
-.poemas-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* margin: 50px; */
+.poemas-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin: 50px; */
 }
-.poemas-section h2{
-    font-size: 3rem;
+.poemas-section h2 {
+  font-size: 3rem;
 }
 .poemas-div {
   margin: 30px 90px;
@@ -27,33 +27,68 @@ max-width: 80vw;
   grid-template: auto/1fr 1fr;
   /* gap: 120px; */
 }
-.poemas-div div{
+.poemas-div div {
   text-align: center;
   padding: 15px;
   /* box-shadow: 2px 2px 4px 0px rgba(119, 48, 48, 0.3); */
   /* border-radius: 5px; */
   border: solid black 1px;
-
 }
-.texto-p{
-    font-size: 1.3rem;
-  }
-.pertenece-al-libro{
+
+.texto-p {
+  font-size: 1.3rem;
+}
+
+.pertenece-al-libro {
   text-align: center;
   color: rgba(152, 152, 152, 0.912);
   font-size: 0.8rem;
 }
-.logo-separador{
+
+.logo-separador {
   width: 50px;
   opacity: 50%;
 }
+
+.title-container {
+  border: solid 1px rgb(100, 100, 100);
+  padding: 10px;
+  margin: 35px 0px 15px;
+}
+
+.block-poems-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  height: max-content;
+  border: solid 1px rgb(100, 100, 100);
+  margin: 15px 0px;
+}
+.poem-container {
+  padding: 30px;
+  width: 50%;
+  height: max-content;
+}
+.poem-title{
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.image-container img {
+  min-width: 90%;
+  width: 60vw;
+  height: auto;
+  margin-bottom: 15px;
+}
+
 @media screen and (max-width: 900px) {
   .poemas-div {
     /* margin: 30px; */
     grid-template: 1fr / auto;
     /* gap: 20px; */
   }
-  .texto-p{
+  .texto-p {
     font-size: 1rem;
   }
 }

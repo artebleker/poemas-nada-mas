@@ -4,9 +4,8 @@ import { BsBook } from "react-icons/bs";
 import { firestoreFetchSetting } from "../../firebase/fireStoreFetch";
 import { Button } from "react-bootstrap";
 import { BiArrowBack } from "react-icons/bi";
-import "./eBookBuy.css"
+import "./eBookBuy.css";
 const EBookBuy = () => {
-
   const [titleList, setTitleList] = useState([]);
 
   const getDataSettings = async () => {
@@ -29,7 +28,7 @@ const EBookBuy = () => {
   }
   return (
     <div>
-        <Link to="/categorias" className="volver-link">
+      <Link to="/categorias" className="volver-link">
         <Button variant="primary" className="volver-button">
           <BiArrowBack />
         </Button>
@@ -53,16 +52,26 @@ const EBookBuy = () => {
                     __html: replaceWith(m.descripcion),
                   }}
                 />
-                <Button variant='danger'>
-                  <a className="btn-buy" href={m.link} target="_blank" alt={m.nombre} rel="noreferrer"><h4><BsBook/> Comprar</h4></a>
+                <Button variant="danger">
+                  <a
+                    className="btn-buy"
+                    href={m.link}
+                    target="_blank"
+                    alt={m.nombre}
+                    rel="noreferrer"
+                  >
+                    <h4>
+                      <BsBook /> Comprar
+                    </h4>
+                  </a>
                 </Button>
               </div>
             );
           })}
         </div>
       </section>
-        </div>
-  )
-}
+    </div>
+  );
+};
 
-export default EBookBuy
+export default EBookBuy;

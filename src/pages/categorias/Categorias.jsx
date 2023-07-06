@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./categorias.css";
 import poemas from "./../../img/poemas.png";
-import ebookcomprar from "./../../img/ebookcomprar.png";
+// import ebookcomprar from "./../../img/ebookcomprar.png";
 import ebookgratuito from "./../../img/ebookgratuito.png";
 const Categorias = () => {
   return (
@@ -19,14 +19,14 @@ const Categorias = () => {
        <h4>Descargar E-Books</h4>
         <p>Encontrarás e-book de mi autoría a descargar en forma gratuita</p></Link>
       </section>
-      <section><Link to="/comprar-e-books">
+      {/* <section><Link to="/comprar-e-books">
         <img className="categorias-img" src={ebookcomprar} alt="ebookcomprar" />
         <h4>Comprar E-Books</h4>
         <p>
           Podrás adquirir los títulos publicados, clickeeando en el enlace de
           "Compra"
         </p></Link>
-      </section>
+      </section> */}
       </div>
     </article>
   );

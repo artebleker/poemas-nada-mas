@@ -9,10 +9,10 @@ import bienvenidos5 from "./../../img/bienvenidos5.png";
 import bienvenidos6 from "./../../img/bienvenidos6.png";
 import bienvenidos7 from "./../../img/bienvenidos7.png";
 import Carousel from "react-bootstrap/Carousel";
+import { Link } from "react-router-dom";
 import { BsInstagram, BsFacebook, BsYoutube } from "react-icons/bs";
 import logo from "./../../img/logopngchico.png";
 import "./home.css";
-import { Link } from "react-router-dom";
 // import Instagram from "../../components/instagram/Instagram";
 const Home = () => {
   return (

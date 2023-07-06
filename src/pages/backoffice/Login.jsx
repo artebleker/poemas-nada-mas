@@ -38,9 +38,7 @@ const Login = ({ setGoBack }) => {
   };
 
   return (
-    <div className="login-div"
-      
-    >
+    <div className="login-div">
       <Form onSubmit={(e) => handleSubmit(e)} id="login-form">
         <Form.Group className="mb-3" controlId="formBasicText">
           <Form.Label>Usuario</Form.Label>

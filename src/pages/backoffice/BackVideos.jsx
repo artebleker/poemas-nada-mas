@@ -1,11 +1,6 @@
 import React, { useRef, useState } from "react";
-import {
-  collection,
-  doc,
-  setDoc,
-  deleteDoc,
-} from "firebase/firestore";
-import db from "./../../firebase/fireBaseConfig";
+import { collection, doc, setDoc, deleteDoc } from "firebase/firestore";
+import db from "../../firebase/fireBaseConfig";
 import { Button, ButtonGroup, Form } from "react-bootstrap";
 import { firestoreFetchSetting } from "../../firebase/fireStoreFetch";
 
@@ -41,13 +36,13 @@ const BackVideos = () => {
 
   const videoEditHandleSubmit = async (e) => {
     e.preventDefault();
-    console.log(linkEdit.current.value.split(".be/")[1])
-    console.log(nombreEdit.current.value)
+    console.log(linkEdit.current.value.split(".be/")[1]);
+    console.log(nombreEdit.current.value);
     await setDoc(doc(db, "videos", editId), {
       link: linkEdit.current.value.split(".be/")[1],
       nombre: nombreEdit.current.value,
     });
-    alert("Video modificado")
+    alert("Video modificado");
     setEdit(() => "");
     setIsEditId(false);
   };
@@ -131,7 +126,7 @@ const BackVideos = () => {
             >
               <Form.Group className="mb-3" controlId="formEditVideo">
                 <Form.Label>Elija el video a editar</Form.Label>
-                <Form.Select 
+                <Form.Select
                   aria-label="Texto a editar"
                   onChange={(e) => setEditId(e.target.value)}
                 >
@@ -161,11 +156,11 @@ const BackVideos = () => {
             <Form onSubmit={videoEditHandleSubmit} id="edit-video-form">
               <Form.Group className="mb-3" controlId="formBasicVideoEditTitle">
                 <Form.Label>Titulo del video</Form.Label>
-                <Form.Control type="text" ref={nombreEdit} required/>
+                <Form.Control type="text" ref={nombreEdit} required />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicVideoEditLink">
                 <Form.Label>Link de youtube</Form.Label>
-                <Form.Control type="text" ref={linkEdit} required/>
+                <Form.Control type="text" ref={linkEdit} required />
               </Form.Group>
               <Button variant="primary" type="submit">
                 Editar Video

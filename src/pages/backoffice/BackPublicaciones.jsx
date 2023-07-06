@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { collection, doc, setDoc, deleteDoc } from "firebase/firestore";
-import db from "./../../firebase/fireBaseConfig";
+import db from "../../firebase/fireBaseConfig";
 import { Button, ButtonGroup, Form } from "react-bootstrap";
 import { firestoreFetchSetting } from "../../firebase/fireStoreFetch";
 
@@ -22,14 +22,14 @@ const BackPublicaciones = () => {
     setEdit(() => "");
     return newPublicacion;
   };
-  
+
   // traer data
   const [listPublicaciones, setListPublicaciones] = useState([]);
   const [edit, setEdit] = useState("");
   const getEditSettings = async (value) => {
-      const publicacionesData = await firestoreFetchSetting("/publicaciones/");
-      setListPublicaciones(() => publicacionesData);
-      setEdit(value)
+    const publicacionesData = await firestoreFetchSetting("/publicaciones/");
+    setListPublicaciones(() => publicacionesData);
+    setEdit(value);
   };
 
   // Editar
@@ -201,13 +201,13 @@ const BackPublicaciones = () => {
                 Editar Publicación
               </Button>
               <Button
-              variant="warning"
-              onClick={() => {
-                setEdit(() => "");
-              }}
-            >
-              Cancelar
-            </Button>
+                variant="warning"
+                onClick={() => {
+                  setEdit(() => "");
+                }}
+              >
+                Cancelar
+              </Button>
             </Form>
           )}
         </div>

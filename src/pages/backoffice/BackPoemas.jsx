@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { collection, doc, setDoc, deleteDoc } from "firebase/firestore";
-import db from "./../../firebase/fireBaseConfig";
+import db from "../../firebase/fireBaseConfig";
 import { Button, ButtonGroup, Form } from "react-bootstrap";
 import { firestoreFetchSetting } from "../../firebase/fireStoreFetch";
 const BackPoemas = () => {
@@ -29,15 +29,14 @@ const BackPoemas = () => {
 
   // traer data
   const [listPoemas, setListPoemas] = useState([]);
- const [edit, setEdit] = useState("");
+  const [edit, setEdit] = useState("");
   const getEditSettings = async (value) => {
-      const poemaData = await firestoreFetchSetting("/poemas/");
-      setListPoemas(() => poemaData);
-      setEdit(value)
-    }
-  
-    
-    // editar
+    const poemaData = await firestoreFetchSetting("/poemas/");
+    setListPoemas(() => poemaData);
+    setEdit(value);
+  };
+
+  // editar
   const tituloEdit = useRef("");
   const libroEdit = useRef("");
   const añoEdit = useRef("");
@@ -49,20 +48,22 @@ const BackPoemas = () => {
 
   const poemEditHandleSubmit = async (e) => {
     e.preventDefault();
-    console.log(tituloEdit.current.value,
+    console.log(
+      tituloEdit.current.value,
       libroEdit.current.value,
       añoEdit.current.value,
       textoEdit.current.value,
-      estiloEdit.current.value,)
-   console.log(editId)
+      estiloEdit.current.value
+    );
+    console.log(editId);
     await setDoc(doc(db, "poemas", editId), {
       año: añoEdit.current.value,
       estilo: estiloEdit.current.value,
       libro: libroEdit.current.value,
       texto: textoEdit.current.value,
-      titulo: tituloEdit.current.value
+      titulo: tituloEdit.current.value,
     });
-    alert("Poema modificado")
+    alert("Poema modificado");
     setEdit(() => "");
     setIsEditId(false);
   };
@@ -112,50 +113,50 @@ const BackPoemas = () => {
         </ButtonGroup>
       )}
       {edit === "agregar" && (
-      <div>
-        <h2>Agregar un Poema</h2>
-        <Form onSubmit={poemHandleSubmit} id="poema-form">
-          <Form.Group className="mb-3" controlId="formBasicPoemTitle">
-            <Form.Label>Titulo del poema</Form.Label>
-            <Form.Control type="text" ref={titulo} />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicBook">
-            <Form.Label>Libro donde se encuentra</Form.Label>
-            <Form.Control type="text" ref={libro} />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicYear">
-            <Form.Label>Año que fue publicado/escrito</Form.Label>
-            <Form.Control type="number" ref={año} />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPoem">
-            <Form.Label>Poema</Form.Label>
-            <Form.Text className="text-muted">
-              Para subir correctamente el poema remplazar:
-              <ul>
-                <li>
-                  Enter por: <b>eN</b>
-                </li>
-                <li>
-                  Tabulación por: <b>tB</b>
-                </li>
-                <li>
-                  Espacio (cuando sea más de un espacio) por: <b>sP</b>
-                </li>
-              </ul>
-            </Form.Text>
-            <Form.Control as="textarea" rows={3} ref={texto} />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPoem">
-            <Form.Label>Elija el estilo</Form.Label>
-            <Form.Select aria-label="Estilo de texto" ref={estilo}>
-              <option value="poema">Poema</option>
-              <option value="haiku">Haiku</option>
-            </Form.Select>
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Guardar Poema
-          </Button>
-          <Button
+        <div>
+          <h2>Agregar un Poema</h2>
+          <Form onSubmit={poemHandleSubmit} id="poema-form">
+            <Form.Group className="mb-3" controlId="formBasicPoemTitle">
+              <Form.Label>Titulo del poema</Form.Label>
+              <Form.Control type="text" ref={titulo} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicBook">
+              <Form.Label>Libro donde se encuentra</Form.Label>
+              <Form.Control type="text" ref={libro} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicYear">
+              <Form.Label>Año que fue publicado/escrito</Form.Label>
+              <Form.Control type="number" ref={año} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPoem">
+              <Form.Label>Poema</Form.Label>
+              <Form.Text className="text-muted">
+                Para subir correctamente el poema remplazar:
+                <ul>
+                  <li>
+                    Enter por: <b>eN</b>
+                  </li>
+                  <li>
+                    Tabulación por: <b>tB</b>
+                  </li>
+                  <li>
+                    Espacio (cuando sea más de un espacio) por: <b>sP</b>
+                  </li>
+                </ul>
+              </Form.Text>
+              <Form.Control as="textarea" rows={3} ref={texto} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPoem">
+              <Form.Label>Elija el estilo</Form.Label>
+              <Form.Select aria-label="Estilo de texto" ref={estilo}>
+                <option value="poema">Poema</option>
+                <option value="haiku">Haiku</option>
+              </Form.Select>
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Guardar Poema
+            </Button>
+            <Button
               variant="warning"
               onClick={() => {
                 setEdit(() => "");
@@ -163,12 +164,12 @@ const BackPoemas = () => {
             >
               Cancelar
             </Button>
-        </Form>
-      </div>
+          </Form>
+        </div>
       )}
       {edit === "editar" && (
-      <div>
-         {isEditId === false ? (
+        <div>
+          {isEditId === false ? (
             <Form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -178,7 +179,7 @@ const BackPoemas = () => {
             >
               <Form.Group className="mb-3" controlId="formEditPoema">
                 <Form.Label>Elija el poema a editar</Form.Label>
-                <Form.Select 
+                <Form.Select
                   aria-label="Texto a editar"
                   onChange={(e) => setEditId(e.target.value)}
                 >
@@ -205,62 +206,62 @@ const BackPoemas = () => {
               </Button>
             </Form>
           ) : (
-        <Form onSubmit={poemEditHandleSubmit} id="poema-edit-form">
-          <Form.Group className="mb-3" controlId="formBasicEditPoemTitle">
-            <Form.Label>Titulo del poema</Form.Label>
-            <Form.Control type="text" ref={tituloEdit} required/>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEditBook">
-            <Form.Label>Libro donde se encuentra</Form.Label>
-            <Form.Control type="text" ref={libroEdit} required/>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEditYear">
-            <Form.Label>Año que fue publicado/escrito</Form.Label>
-            <Form.Control type="number" ref={añoEdit} required/>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEditPoemText">
-            <Form.Label>Poema</Form.Label>
-            <Form.Text className="text-muted">
-              Para subir correctamente el poema remplazar:
-              <ul>
-                <li>
-                  Enter por: <b>eN</b>
-                </li>
-                <li>
-                  Tabulación por: <b>tB</b>
-                </li>
-                <li>
-                  Espacio (cuando sea más de un espacio) por: <b>sP</b>
-                </li>
-              </ul>
-            </Form.Text>
-            <Form.Control as="textarea" rows={3} ref={textoEdit} required/>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEditPoemStyle">
-            <Form.Label>Elija el estilo</Form.Label>
-            <Form.Select aria-label="Estilo de texto" ref={estiloEdit}>
-              <option value="poema">Poema</option>
-              <option value="haiku">Haiku</option>
-            </Form.Select>
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Editar Poema
-          </Button>
-        <Button
-              variant="warning"
-              onClick={() => {
-                setEdit(() => "");
-              }}
-            >
-              Cancelar
-            </Button>
+            <Form onSubmit={poemEditHandleSubmit} id="poema-edit-form">
+              <Form.Group className="mb-3" controlId="formBasicEditPoemTitle">
+                <Form.Label>Titulo del poema</Form.Label>
+                <Form.Control type="text" ref={tituloEdit} required />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEditBook">
+                <Form.Label>Libro donde se encuentra</Form.Label>
+                <Form.Control type="text" ref={libroEdit} required />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEditYear">
+                <Form.Label>Año que fue publicado/escrito</Form.Label>
+                <Form.Control type="number" ref={añoEdit} required />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEditPoemText">
+                <Form.Label>Poema</Form.Label>
+                <Form.Text className="text-muted">
+                  Para subir correctamente el poema remplazar:
+                  <ul>
+                    <li>
+                      Enter por: <b>eN</b>
+                    </li>
+                    <li>
+                      Tabulación por: <b>tB</b>
+                    </li>
+                    <li>
+                      Espacio (cuando sea más de un espacio) por: <b>sP</b>
+                    </li>
+                  </ul>
+                </Form.Text>
+                <Form.Control as="textarea" rows={3} ref={textoEdit} required />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEditPoemStyle">
+                <Form.Label>Elija el estilo</Form.Label>
+                <Form.Select aria-label="Estilo de texto" ref={estiloEdit}>
+                  <option value="poema">Poema</option>
+                  <option value="haiku">Haiku</option>
+                </Form.Select>
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Editar Poema
+              </Button>
+              <Button
+                variant="warning"
+                onClick={() => {
+                  setEdit(() => "");
+                }}
+              >
+                Cancelar
+              </Button>
             </Form>
           )}
-      </div>
+        </div>
       )}
       {edit === "eliminar" && (
-      <div>
-        <h2>Eliminar un Poema</h2>
+        <div>
+          <h2>Eliminar un Poema</h2>
           <Form onSubmit={deletePoemHandleSubmit} id="delete-poem">
             <Form.Group className="mb-3" controlId="formDeletePoem">
               <Form.Label>Elija el poema a eliminar</Form.Label>
@@ -286,7 +287,7 @@ const BackPoemas = () => {
               Cancelar
             </Button>
           </Form>
-      </div>
+        </div>
       )}
     </div>
   );

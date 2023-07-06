@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { collection, doc, setDoc, deleteDoc } from "firebase/firestore";
-import db from "./../../firebase/fireBaseConfig";
+import db from "../../firebase/fireBaseConfig";
 import { Button, ButtonGroup, Form } from "react-bootstrap";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import { firestoreFetchSetting } from "../../firebase/fireStoreFetch";
@@ -49,17 +49,14 @@ const BackDescargas = () => {
     setEdit(() => "");
     return newDownload;
   };
-    // traer data
+  // traer data
   const [listDescargas, setListDescargas] = useState([]);
   const [edit, setEdit] = useState("");
   const getEditSettings = async (value) => {
-      const descargasData = await firestoreFetchSetting("/descargas/");
-      setListDescargas(() => descargasData);
-      setEdit(value)
+    const descargasData = await firestoreFetchSetting("/descargas/");
+    setListDescargas(() => descargasData);
+    setEdit(value);
   };
-
-  
-   
 
   // Borrar
   const deleteId = useRef("");
@@ -75,7 +72,7 @@ const BackDescargas = () => {
 
   return (
     <div>
-       {edit === "" && (
+      {edit === "" && (
         <ButtonGroup>
           <Button
             variant="primary"
@@ -86,7 +83,7 @@ const BackDescargas = () => {
           >
             <h2>Agregar un E-book</h2>
           </Button>
-          
+
           <Button
             variant="danger"
             onClick={(e) => {
@@ -99,55 +96,58 @@ const BackDescargas = () => {
         </ButtonGroup>
       )}
       {edit === "agregar" && (
-      <div>
-        <h2>Agregar un E-Book para Descargar</h2>
-        <Form onSubmit={DownloadHandleSubmit} id="e-book-Download-form">
-          <Form.Group className="mb-3" controlId="formBasicDownloadTitle">
-            <Form.Label>Titulo del E-Book para descargar</Form.Label>
-            <Form.Control type="text" ref={nombreDownload} />
-          </Form.Group>
-          <Form.Group
-            className="mb-3 p-3 border border-danger"
-            controlId="formBasicImagenDownload"
-          >
-            <Form.Label>Archivo de imagen</Form.Label>
-            <Form.Text className="text-muted">
-              ¡El nombre del archivo NO debe contener espacios ni guiones!
-            </Form.Text>
-            <Form.Control type="file" ref={fileImagenDownload} />
-          </Form.Group>
-          <Form.Group
-            className="mb-3 p-3 border border-danger"
-            controlId="formBasicFileDownload"
-          >
-            <Form.Label>Archivo PDF</Form.Label>
-            <Form.Text className="text-muted">
-              ¡El nombre del archivo NO debe contener espacios ni guiones!
-            </Form.Text>
-            <Form.Control type="file" ref={fileDownload} />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicDescriptionDownload">
-            <Form.Label>Descripción del E-Book</Form.Label>
-            <Form.Text className="text-muted">
-              Para subir correctamente el texto remplazar:
-              <ul>
-                <li>
-                  Enter por: <b>eN</b>
-                </li>
-                <li>
-                  Tabulación por: <b>tB</b>
-                </li>
-                <li>
-                  Espacio (cuando sea más de un espacio) por: <b>sP</b>
-                </li>
-              </ul>
-            </Form.Text>
-            <Form.Control as="textarea" rows={3} ref={descriptionDownload} />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Guardar E-Book para descargar
-          </Button>
-          <Button
+        <div>
+          <h2>Agregar un E-Book para Descargar</h2>
+          <Form onSubmit={DownloadHandleSubmit} id="e-book-Download-form">
+            <Form.Group className="mb-3" controlId="formBasicDownloadTitle">
+              <Form.Label>Titulo del E-Book para descargar</Form.Label>
+              <Form.Control type="text" ref={nombreDownload} />
+            </Form.Group>
+            <Form.Group
+              className="mb-3 p-3 border border-danger"
+              controlId="formBasicImagenDownload"
+            >
+              <Form.Label>Archivo de imagen</Form.Label>
+              <Form.Text className="text-muted">
+                ¡El nombre del archivo NO debe contener espacios ni guiones!
+              </Form.Text>
+              <Form.Control type="file" ref={fileImagenDownload} />
+            </Form.Group>
+            <Form.Group
+              className="mb-3 p-3 border border-danger"
+              controlId="formBasicFileDownload"
+            >
+              <Form.Label>Archivo PDF</Form.Label>
+              <Form.Text className="text-muted">
+                ¡El nombre del archivo NO debe contener espacios ni guiones!
+              </Form.Text>
+              <Form.Control type="file" ref={fileDownload} />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="formBasicDescriptionDownload"
+            >
+              <Form.Label>Descripción del E-Book</Form.Label>
+              <Form.Text className="text-muted">
+                Para subir correctamente el texto remplazar:
+                <ul>
+                  <li>
+                    Enter por: <b>eN</b>
+                  </li>
+                  <li>
+                    Tabulación por: <b>tB</b>
+                  </li>
+                  <li>
+                    Espacio (cuando sea más de un espacio) por: <b>sP</b>
+                  </li>
+                </ul>
+              </Form.Text>
+              <Form.Control as="textarea" rows={3} ref={descriptionDownload} />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Guardar E-Book para descargar
+            </Button>
+            <Button
               variant="warning"
               onClick={() => {
                 setEdit(() => "");
@@ -155,14 +155,14 @@ const BackDescargas = () => {
             >
               Cancelar
             </Button>
-        </Form>
-      </div>
+          </Form>
+        </div>
       )}
-    
+
       {edit === "eliminar" && (
-      <div>
-        <h2>Eliminar E-Book para descargar</h2>
-        
+        <div>
+          <h2>Eliminar E-Book para descargar</h2>
+
           <Form onSubmit={deleteDescargaHandleSubmit} id="delete-descarga">
             <Form.Group className="mb-3" controlId="formDeleteDescarga">
               <Form.Label>Elija el e-book a eliminar</Form.Label>
@@ -188,8 +188,8 @@ const BackDescargas = () => {
               Cancelar
             </Button>
           </Form>
-      </div>
-        )}
+        </div>
+      )}
     </div>
   );
 };

@@ -63,7 +63,10 @@ const EBookFree = () => {
                     __html: replaceWith(m.descripcion),
                   }}
                 />
-                <Button variant='danger' onClick={() => downloadTextLink(m.nombreArchivo)}>
+                <Button
+                  variant="danger"
+                  onClick={() => downloadTextLink(m.nombreArchivo)}
+                >
                   Descarga
                 </Button>
               </div>
