@@ -12,6 +12,7 @@ import Carousel from "react-bootstrap/Carousel";
 import { Link } from "react-router-dom";
 import { BsInstagram, BsFacebook, BsYoutube } from "react-icons/bs";
 import logo from "./../../img/logopngchico.png";
+import tiendaNube from './../../img/tiendaNube.png'
 import "./home.css";
 // import Instagram from "../../components/instagram/Instagram";
 const Home = () => {
@@ -49,11 +50,28 @@ const Home = () => {
             </p>
             <div className="div-saber-mas">
               <div>
+              <a
+                  href="https://www.youtube.com/@poemasnadamas"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="presentacion-home-link m-1 p-1"
+                >
+                  <BsYoutube />
+                </a>
+                <a
+                  href="https://poemasnadamas.mitiendanube.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="presentacion-home-link m-1 p-1"
+                >
+                  <img src={tiendaNube} alt="Tienda Nuebe" style={{width:"27.2px", height:"27.2px"}}/>
+
+                </a>
                 <a
                   href="https://www.instagram.com/cecy3493/?hl=es-la"
                   target="_blank"
                   rel="noreferrer"
-                  className="presentacion-home-link m-1"
+                  className="presentacion-home-link m-1 p-1"
                 >
                   <BsInstagram />
                 </a>
@@ -61,18 +79,11 @@ const Home = () => {
                   href="https://www.facebook.com/ceciliadelvalle.tapia"
                   target="_blank"
                   rel="noreferrer"
-                  className="presentacion-home-link m-1"
+                  className="presentacion-home-link m-1 p-1"
                 >
                   <BsFacebook />
                 </a>
-                <a
-                  href="https://www.youtube.com/@poemasnadamas"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="presentacion-home-link m-1"
-                >
-                  <BsYoutube />
-                </a>
+               
               </div>
               {/* <br/>
             <br/> */}
