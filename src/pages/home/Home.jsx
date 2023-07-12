@@ -215,8 +215,7 @@ const Home = () => {
               <Carousel.Caption className="carousel-caption" interval={1500}>
                 {/* <h4>Cecy Tapia</h4> */}
                 <p>
-                  “La metáfora poética es el lenguaje del inconsciente, desde
-                  allí que trascienda la razón. Es allí donde todos nos
+                  “La metáfora: Es allí donde todos nos
                   encontramos alrededor del fuego”.
                   {/* «La metáfora poética es el lenguaje del inconsciente, desde
                   allí que la poesía trascienda la razón.» */}

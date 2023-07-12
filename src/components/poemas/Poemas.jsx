@@ -398,7 +398,7 @@ const Poemas = () => {
                   <br />
                   y a la luz de tu luna y acerbo
                   <br />
-                  esta pasado va volviéndose canción.
+                  este pasado va volviéndose canción.
                   <br />
                   <br />
                   Sin saberlo

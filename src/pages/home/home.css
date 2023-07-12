@@ -227,3 +227,14 @@
     font-size: 1.2rem;
   }
 }
+@media screen and (max-width: 350px) {
+  .carousel-caption {
+    padding: 2px;
+  }
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
+  .carousel-caption h4 {
+    font-size: 1rem;
+  }
+}
