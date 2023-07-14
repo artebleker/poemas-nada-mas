@@ -1,11 +1,11 @@
 import React from 'react'
 import './curriculum.css'
-
+import { curriculumHTML } from './curriculumHTML'
 const Curriculum = () => {
   return (
     <article className='curriculum-container'>
-        <div>
-        <h2 >DATOS CURRICULARES</h2>
+        <div dangerouslySetInnerHTML={{__html: curriculumHTML}}>
+        {/* <h2 >DATOS CURRICULARES</h2>
         <p >Nacida en la Ciudad de Salta, República Argentina.&nbsp;</p>
         <p >Pianista Licenciada en Música.</p>
         <p >Poeta amateur.;</p>
@@ -120,7 +120,7 @@ const Curriculum = () => {
         <p >Finalista del VI Certamen de Haiku Hawai Chigetsu, Letras como Espada, Toledo, España, 2021</p>
         <p >Finalista del Concurso de Haiku “Homenaje a las Mujeres”, Mundo Escritura, España, 2021.</p>
         <p >Finalista del Concurso de Haiku “Un libro, una vida”, Mundo Escritura, España, 2021.</p>
-        <p >Finalista del VII Certamen de Haiku “Mario Benedetti”, Letras como Espada, Toledo, España, 2022.</p>
+        <p >Finalista del VII Certamen de Haiku “Mario Benedetti”, Letras como Espada, Toledo, España, 2022.</p> */}
       </div>
     </article>
   )
